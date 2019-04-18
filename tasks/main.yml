@@ -1,0 +1,23 @@
+- name: "setup {{ unit }}.service"
+  template:
+    src: '{{ service_config }}'
+    dest: '{{ systemd_service_dir }}/{{ unit }}.service'
+  when: service_config is defined and service_config
+
+- name: "setup {{ unit }}.socket"
+  template:
+    src: '{{ socket_config }}'
+    dest: '{{ systemd_service_dir }}/{{ unit }}.socket'
+  when: socket_config is defined and socket_config
+
+- name: "setup {{ unit }}.path"
+  template:
+    src: '{{ socket_config }}'
+    dest: '{{ systemd_service_dir }}/{{ unit }}.path'
+  when: path_config is defined and path_config
+
+- name: "setup tmpfiles.d/{{ unit }}.conf"
+  template:
+    src: '{{ tmpfile_d_config }}'
+    dest: '/etc/tmpfiles.d/{{ unit }}.conf'
+  when: tmpfile_d_config is defined and tmpfile_d_config

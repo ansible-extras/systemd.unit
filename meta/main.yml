@@ -1,0 +1,10 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Vladislav Bakin
+  license: "MIT"
+  platforms:
+    - name: Debian
+      versions:
+        - stretch

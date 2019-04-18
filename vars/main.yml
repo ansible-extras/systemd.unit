@@ -1,0 +1,6 @@
+service_enabled: yes
+
+service_config: ~
+socket_config: ~
+path_config: ~
+tmpfile_d_config: ~
